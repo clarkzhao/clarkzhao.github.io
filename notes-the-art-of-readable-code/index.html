@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="一个人">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="clark">
+    
+
+    <!-- Title -->
+    
+    <title>读书笔记《编写可读代码的艺术》 | 克拉克写字的地方</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+<!-- Back Home -->
+<a class="nav-back" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>读书笔记《编写可读代码的艺术》</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>工作后，陆陆续续也做了几个项目，本书中所提到的几个注意点确实深有体会。这本能够围绕提高代码可读性这个原则，介绍了从变量名、注释、控制流、表达式、类/方法等多个方面优化代码的方法。这个读书笔记总结了作者的主要想法，起到了快速查阅的作用。</p>
+<a id="more"></a>
+<p>既然本书是关于提高代码可读性的，那么提高代码可读性到底重不重要呢？</p>
+<p>我认为答案并非绝对的。对于书中提到的那些一劳永逸即可提升的点，最好仔细理解并贯彻，比如变量的命名方式，函数的结构等等，这些其实是节省自己以及别人未来的时间。</p>
+<p>对于另一些每次运用都需要花费额外时间的点，比如额外的注释等等，建议哪怕项目再赶，宏观级注释也是需要的，因为它不需要花费过多额外的时间，却至少这可以帮助到未来的自己理解代码。</p>
+<p>剩下的就见仁见智了，也许未来的我们都会有新的理解。</p>
+<p>附：豆瓣地址: <a href="https://book.douban.com/subject/10797189/" target="_blank" rel="noopener">中文版</a>，<a href="https://book.douban.com/subject/5442971/" target="_blank" rel="noopener">英文版</a></p>
+<h1 id="前言、代码应当易于理解"><a href="#前言、代码应当易于理解" class="headerlink" title="前言、代码应当易于理解"></a>前言、代码应当易于理解</h1><ul>
+<li><p>可读性基本定理</p>
+<blockquote>
+<p>  <strong>代码的写法应当使别人理解它所需的时间最小化。</strong></p>
+</blockquote>
+</li>
+</ul>
+<h1 id="一、表面层次的改进"><a href="#一、表面层次的改进" class="headerlink" title="一、表面层次的改进"></a>一、表面层次的改进</h1><h2 id="把信息装到变量的名字中"><a href="#把信息装到变量的名字中" class="headerlink" title="把信息装到变量的名字中"></a>把信息装到变量的名字中</h2><ul>
+<li><p>选择专业的词</p>
+<ul>
+<li>比如将下表左列指代不清的词换成右列中更为细分的词</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>单词</th>
+<th>其他选择</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>get</td>
+<td>fetch, download</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>kill, pause, resume</td>
+</tr>
+<tr>
+<td>send</td>
+<td>deliver, dispatch, distribute</td>
+</tr>
+<tr>
+<td>find</td>
+<td>search, locate, extract</td>
+</tr>
+<tr>
+<td>start</td>
+<td>launch, create, begin, open</td>
+</tr>
+<tr>
+<td>make</td>
+<td>create, build, add, compose, new</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p>避免泛泛的词</p>
+<ul>
+<li>避免 <code>tmp</code> 这种泛泛的词</li>
+<li>好的名字应当描述变量的目的或者它所承载的值<ul>
+<li>如用<code>sum_squares</code> 代替 <code>tmp</code></li>
+<li><code>tmp</code>如果是文件，则用 <code>tmp_file</code> 更好</li>
+<li>循环迭代器 <code>i, j, k</code> 如果循环太多，容易搞混，最好用它所循环的变量名作为前缀如<code>club_i, member_i, user_i</code> 或者 <code>ci, mi, ui</code> 代替</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>用具体的名字代替抽象的名字</p>
+<ul>
+<li>哪些名字非常抽象呢，想象自己是一个新加入项目的成员，能否快速通过名字知道这个变量所表达的信息</li>
+</ul>
+</li>
+<li><p>为名字附带更多的信息</p>
+<ul>
+<li><p>后缀加单位</p>
+<ul>
+<li>如 <code>start -&gt; start_ms</code></li>
+</ul>
+</li>
+<li><p>附带其他信息</p>
+<ul>
+<li><p>未处理的变量前加 <code>raw_</code></p>
+</li>
+<li><p>如纯文本的密码变量 <code>pwd -&gt; plaintext_pwd</code></p>
+</li>
+<li><p>匈牙利表示法是严谨的此类方法的命名系统</p>
+<p>  它把变量的类型信息放在了变量名最前面如</p>
+<p>  <code>pLast</code>表示数据结构中最后一个元素的指针</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>名字要不要太长</p>
+<ul>
+<li><p>怎么选择变量名的长短，如</p>
+<ul>
+<li><code>d, days, days_since_last_update</code></li>
+</ul>
+</li>
+<li>小的作用域里写短名字</li>
+<li>代码补全可以让输入长名字不再痛苦</li>
+<li>只是用通用的缩略词，避免首字母缩略<ul>
+<li>比如 <code>str -&gt; string</code> 是很通用的写法</li>
+<li><code>LF -&gt; Load Factor</code> 就容易让人费解</li>
+</ul>
+</li>
+<li><p>拿掉不会损失信息的词</p>
+<ul>
+<li><code>ConverToString - &gt; ToString</code></li>
+</ul>
+</li>
+<li><p>利用名字的格式来传递含义</p>
+<ul>
+<li><p>类变量后面加后缀<code>offset_</code></p>
+</li>
+<li><p>全部大写表示常量 <code>MAX_FILE_CNT</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="不会误解的名字"><a href="#不会误解的名字" class="headerlink" title="不会误解的名字"></a>不会误解的名字</h2><p>多问自己几遍：“这个名字会被解读成其他的含义吗？”</p>
+<ul>
+<li>如 <code>filter</code> 究竟是过滤剩下的还是直接减去的意思？</li>
+<li><p><code>max_length</code> 如果代表最大字符数，用<code>max_chars</code> 更好，因为<code>length</code> 指代不清晰</p>
+</li>
+<li><p>使用 <code>min</code> 和 <code>max</code> 代表极限值，这样就可以明确是 <code>&gt;</code> 和 <code>&lt;</code> 而不是<code>&gt;=</code>和<code>&lt;=</code> 了</p>
+</li>
+<li>使用 <code>first</code> 和 <code>last</code> 来代表包含的范围</li>
+<li><p>使用 <code>begin</code> 和 <code>end</code> 来代表排除的范围</p>
+<ul>
+<li><code>end</code>代表刚好超过最后一个值</li>
+</ul>
+</li>
+<li><p>布尔值命名前加上<code>is, has, can, should</code></p>
+<ul>
+<li>避免使用反义词</li>
+</ul>
+</li>
+<li>与使用者的期望匹配<ul>
+<li><code>get()</code> 和 <code>size()</code> 给人很容易得到的感觉，如果是要计算均值用<code>compute_mean（）</code> 比 <code>get_mean()</code>好</li>
+</ul>
+</li>
+</ul>
+<h2 id="审美"><a href="#审美" class="headerlink" title="审美"></a>审美</h2><ul>
+<li><p>审美三原则</p>
+<ul>
+<li>使用一致的布局</li>
+<li>相似的代码看上去相似</li>
+<li>把相关的代码行分组，形成代码块<ul>
+<li>把相似的想法归类</li>
+<li>提供“脚印”</li>
+<li>便于段落间的导航</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>变量申明调用时，使用有意义的顺序</p>
+<ul>
+<li>如果在一段代码提到A、 B 和 C， 那么不要在另 一段中说 B、 C 和 A。 选择一个有意义的顺序， 并始终用这样的顺序。</li>
+</ul>
+</li>
+<li><p>把申明按逻辑组织起来</p>
+<ul>
+<li>用空行和注释把不同阶段的代码分开来</li>
+</ul>
+</li>
+<li><p>个人风格的一致性</p>
+<ul>
+<li>缩进</li>
+<li>换行处</li>
+</ul>
+</li>
+</ul>
+<h2 id="改写什么样的注释"><a href="#改写什么样的注释" class="headerlink" title="改写什么样的注释"></a>改写什么样的注释</h2><blockquote>
+<p>  注释的目的是为了帮助读者了解的和作者一样多</p>
+</blockquote>
+<ul>
+<li><p>当我们写代码时，脑海里有很多有价值的信息，但是读者除了注释能看到的只有代码，所以注释包含的信息非常重要</p>
+</li>
+<li><p>哪些不需要注释</p>
+<ul>
+<li><p>没有提供新的信息</p>
+</li>
+<li><p>不能帮助读者更好的理代码</p>
+</li>
+<li><p><strong>不要为那些从代码本身就能快速推断的事实写注释</strong></p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Bad comment </span></span><br><span class="line"><span class="comment"># ===========</span></span><br><span class="line"><span class="comment"># y equals x plus 1</span></span><br><span class="line">y = x + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Good comment</span></span><br><span class="line"><span class="comment"># ============</span></span><br><span class="line"><span class="comment"># remove everything after the second *</span></span><br><span class="line">name = <span class="string">'*'</span>.join(line.split(<span class="string">'*'</span>)[:<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>避免为了注释而注释</p>
+<ul>
+<li>比如重写一遍函数的输入变量</li>
+</ul>
+</li>
+<li><p>不要给不好的名字加注释，把名字改好</p>
+<ul>
+<li>好代码 &gt; 坏代码 + 好注释</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>用代码记录你的思想</p>
+<ul>
+<li><p>好的注释就是写代码中产生的重要想法</p>
+</li>
+<li><p>电影制作者在其中给出自己的见解来通过讲故事来帮助你理解这部电影如何制作的。代码的注释也应该起到类似的效果</p>
+</li>
+<li><p>为代码的瑕疵写注释 </p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>标记</th>
+<th>通常的意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TODO</td>
+<td>我还没有处理的事</td>
+</tr>
+<tr>
+<td>FIXME</td>
+<td>已知的无法运行的代码</td>
+</tr>
+<tr>
+<td>HACK</td>
+<td>对一个问题不得不采用的比较粗糙的解决方案</td>
+</tr>
+<tr>
+<td>XXX</td>
+<td>危险！这里有很重要的事</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>代码如何改动的想法应该被记录下来。此类注释帮助读者认识代码当前的质量和状态，甚至可以指导未来代码的改进方向</li>
+<li>给常量加注释<ul>
+<li>记录下决定这个常量值时的想法</li>
+</ul>
+</li>
+<li>站在读者的角度，去想象他们需要知道什么<ul>
+<li>想象你的代码对于外人看起来是什么样子的，这个人并不熟悉你的项目</li>
+<li>将细节写在注释中，解释为什么代码这么写而不那么写的内在理由</li>
+<li>为普通读者意料之外的行为加上注释</li>
+<li>公布有可能存在的陷阱，未雨绸缪<ul>
+<li>与其让用户慢慢发现问题，不如提前告知风险</li>
+</ul>
+</li>
+<li>全局关的注释<ul>
+<li>解释系统的各个组成部分</li>
+<li>文件级别的注释</li>
+</ul>
+</li>
+<li>总结性的注释<ul>
+<li>解释后面的代码块做什么</li>
+<li>不能简单的说注释只能用于解释“为什么”的问题而不能用于说明“是什么”的问题， 具体问题具体分析。</li>
+</ul>
+</li>
+<li>只要能帮到用户理解代码的，就是好注释。</li>
+</ul>
+</li>
+<li><p>克服不敢写注释的方法</p>
+<ul>
+<li>不管心里想什么，先写下来</li>
+<li>读一下这段注释，改进</li>
+</ul>
+</li>
+</ul>
+<h2 id="写出言简意赅的注释"><a href="#写出言简意赅的注释" class="headerlink" title="写出言简意赅的注释"></a>写出言简意赅的注释</h2><blockquote>
+<p>  注释应该有很高的信息/空间率</p>
+</blockquote>
+<ul>
+<li><p>让注释保持紧凑</p>
+</li>
+<li><p>避免使用不明确的代词</p>
+<ul>
+<li><code>it, this</code>到底指什么</li>
+</ul>
+</li>
+<li><p>润色粗糙的注释</p>
+</li>
+<li><p><strong>精确</strong>的描述函数的行为</p>
+<ul>
+<li>如统计行数的行数，定义清楚行数到底怎么统计的，是数 <code>\n</code> 呢还是数 <code>\r</code> 呢？</li>
+</ul>
+</li>
+<li><p>用输入输出的例子来说明特别情况</p>
+<ul>
+<li>有些时候一个好的例子顶的上很多句话</li>
+</ul>
+</li>
+<li><p>要包含新的新信息，而非解释代码字面上的意思。从高层次解释这段程序做了什么</p>
+<ul>
+<li>这样做的好处在于可以让读者明白作者真正的意图，可能与实际代码有冲突，起到了冗余检查的角色</li>
+</ul>
+</li>
+<li><p>让函数的参数有名字</p>
+  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connect(timeout=<span class="number">10</span>, use_encryption=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connect(<span class="comment">/* timeout_ms = */</span><span class="number">10</span>, <span class="comment">/* use_encryption */</span> = False)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>采用信息量很高的词，代替经常出现的编程场景</p>
+<ul>
+<li>Caching layer</li>
+<li>heurisitc</li>
+<li>bruteforce </li>
+<li>naive solution</li>
+</ul>
+</li>
+</ul>
+<h1 id="二、简化循环和逻辑"><a href="#二、简化循环和逻辑" class="headerlink" title="二、简化循环和逻辑"></a>二、简化循环和逻辑</h1><h2 id="让控制流变得易读"><a href="#让控制流变得易读" class="headerlink" title="让控制流变得易读"></a>让控制流变得易读</h2><blockquote>
+<p>  避免复杂的逻辑，巨大的表达式，一大堆变量，因为这增加了我们的思维包袱，这与容易理解矛盾，容易引起 bug 。</p>
+</blockquote>
+<ul>
+<li>条件语句中参数的顺序</li>
+</ul>
+<pre><code>| 比较的左侧             | 比较的右侧             |
+| ---------------------- | ---------------------- |
+| 被查询的表达式，偏变量 | 被比较的表达式，偏常量 |
+
+这条原则和英文（中文）的语法一致
+</code></pre><ul>
+<li><code>if/else</code> 的顺序<ul>
+<li>先处理正逻辑</li>
+<li>先处理简单情况</li>
+<li>先处理有趣、可疑的情况</li>
+<li>前三者有冲突时，视情况决定</li>
+</ul>
+</li>
+<li>条件表达式<ul>
+<li>相对于追求最小化的代码行数，一个更好的度量方法是最小化人们理解的时间</li>
+<li>默认使用 <code>if/else</code> 只在最简单的情况下，使用简化的语法糖</li>
+</ul>
+</li>
+<li><p>避免<code>do/while</code> 语句，尽量让条件判断出现在最前面</p>
+</li>
+<li><p>从函数中提前返回没有问题，只要保证调用函数结尾的清理代码就行</p>
+</li>
+<li>慎用<code>goto</code></li>
+<li><p>最小化嵌套</p>
+<ul>
+<li>当对代码进行改动时，从全新的角度审视它，把它作为一个整体来看。</li>
+<li>通过提早返回来减少嵌套<ul>
+<li>每一个<code>if</code> 都以<code>return</code> 或 <code>continue</code> 结束</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>谨慎的对待语言的高级特性，确保我们清楚代码的执行流程</p>
+</li>
+</ul>
+<h2 id="拆分超长的表达式"><a href="#拆分超长的表达式" class="headerlink" title="拆分超长的表达式"></a>拆分超长的表达式</h2><blockquote>
+<p>  代码中的表达式越长，越难以理解，尝试把它拆成若干的小块</p>
+</blockquote>
+<ul>
+<li><p>总结变量</p>
+<ul>
+<li>讲一个表达式用总结变量存下来，后面再复用这个总结变量</li>
+</ul>
+</li>
+<li><p>使用德摩根定理 <a href="https://en.wikipedia.org/wiki/De_Morgan%27s_laws" target="_blank" rel="noopener">De Morgan’s laws</a></p>
+<ul>
+<li>非 (P 且 q) = (非 p) 或 (非 q)</li>
+<li>非 (p 或 q) = (非 p) 且 (非 q)</li>
+</ul>
+</li>
+<li><p>避免滥用短路逻辑</p>
+<p>  尽管有些语言存在特性<code>if(a||b)</code> 在 <code>a</code> 为真是不会执行 <code>b</code></p>
+<p>  还是老老实实用 <code>if/else</code>比较好</p>
+</li>
+<li><p>小心智能的小代码段，它们除了炫技毫无意义，只会去让人困惑，不利于后期维护</p>
+</li>
+<li><p>拆分复杂逻辑的一个方向是尝试它的逆逻辑</p>
+</li>
+<li><p>多个一样的表达式可以提取出来成为变量</p>
+<ul>
+<li>避免录入错误</li>
+<li>减少行宽，更易阅读</li>
+<li>方便改动，不必多次修改同类代码</li>
+</ul>
+</li>
+<li>用宏简化重复的同类表达</li>
+</ul>
+<h2 id="变量与可读性"><a href="#变量与可读性" class="headerlink" title="变量与可读性"></a>变量与可读性</h2><blockquote>
+<p>  跟踪变量的三个问题</p>
+<ul>
+<li>变量越多，就越难全部跟踪它们的动向</li>
+<li>变量作用域越大，就需要跟踪它们的动向越久</li>
+<li>变量改动的越平凡，就越难确定它们的当前值</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>减少变量</p>
+<ul>
+<li>减少没有价值的临时变量<ul>
+<li>没有拆分复杂的表达式</li>
+<li>没有做出更多的澄清</li>
+<li>只用了一次，没有压缩任何冗余</li>
+</ul>
+</li>
+<li>减少用来保存中间结果的变量</li>
+<li>减少控制流变量<ul>
+<li>这类变量唯一的目的就是控制程序的执行</li>
+<li>这类变量可以用更好地结构化编程来消除</li>
+<li>有多层循环时，可以把循环中的代码或者整个循环挪到一个新函数中</li>
+<li>微软的 Eric Brechner 说过：“一个好的面试题起码要涉及三个变量。” 因为同时处理三个变量可以强迫人努力思考，但是我们的代码并不是用来面试我们的同事的。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>缩小变量的作用域</p>
+<blockquote>
+<p>   <strong>让你的变量对尽量少的代码行可见</strong></p>
+</blockquote>
+<ul>
+<li><p>如果有一个类变量只有两个方法调用了，那么就可以把这个类变量降格成局部变量，因为它不需要被其他方法看见</p>
+</li>
+<li><p>把定义下移</p>
+<ul>
+<li>原来C语言要求有所变量在代码最前面声明</li>
+<li>现在可以在它使用前才声明</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>只写一次的变量更好</p>
+</li>
+</ul>
+<h1 id="重新组织代码"><a href="#重新组织代码" class="headerlink" title="重新组织代码"></a>重新组织代码</h1><p>三种组织函数级别代码的改动</p>
+<ol>
+<li>抽取出那些与程序主要目的不相关的子问题，变成新的函数</li>
+<li>重新组织代码，使它们一次只做一件事</li>
+<li>先用自然语言描述代码，再用这个描述帮助找到更整洁的解决方案</li>
+</ol>
+<h2 id="抽取不相干的子问题"><a href="#抽取不相干的子问题" class="headerlink" title="抽取不相干的子问题"></a>抽取不相干的子问题</h2><ul>
+<li>纯工具代码可以自己写或者调库<ul>
+<li>文件 I/O</li>
+<li>操作字符串</li>
+<li>哈希表</li>
+</ul>
+</li>
+<li><p>创建大量通用的代码</p>
+<ul>
+<li>从项目其他部分中解耦出来</li>
+<li>容易开发&amp;测试</li>
+<li>项目的其他部分会更小且更容易思考</li>
+</ul>
+</li>
+<li><p>简化已有的接口</p>
+<ul>
+<li>永远不要安于使用不理想的接口</li>
+<li>创建自己的包装函数来隐藏粗陋的接口</li>
+</ul>
+</li>
+<li>必要时，按需要重塑接口</li>
+<li>避免过犹不及，不要引入过多的小函数</li>
+</ul>
+<h2 id="一次只做一件事"><a href="#一次只做一件事" class="headerlink" title="一次只做一件事"></a>一次只做一件事</h2><blockquote>
+<p>  应该把代码组织的一次只做一件事</p>
+</blockquote>
+<p><img src="http://p9283q7hh.bkt.clouddn.com/do_one_thing_at_a_time.png" alt="do_one_thing_at_a_time"></p>
+<p>这个原则不仅适用于一个小函数，而且适用于将大的业务函数整理有序</p>
+<p>流程：</p>
+<ol>
+<li>列出代码所需做的所有任务</li>
+<li>尽量把这件任务拆分到不同的函数中，或者至少是代码的不同段落中</li>
+</ol>
+<ul>
+<li>从对象中抽取需要的值<ul>
+<li>比如对象是一个字典，我们需要这个字典的若干的键对应的值，可以将这写值保存在变量中，抽取出来。这样就不必记住复杂的健值了</li>
+</ul>
+</li>
+</ul>
+<p>Tips</p>
+<pre><code>`a||b||c` 可以返回第一个真值
+</code></pre><h2 id="把想法变成代码"><a href="#把想法变成代码" class="headerlink" title="把想法变成代码"></a>把想法变成代码</h2><blockquote>
+<p>  如果你不能把一件事解释给你的祖母听的话说明你还没有真正理解它。<br>   ​                                                         阿尔伯特 爱因斯坦</p>
+</blockquote>
+<p>编写清晰代码的方法</p>
+<ol>
+<li>像对着一个同事一样用自然语言描述代码要做什么</li>
+<li>注意描述中的关键词</li>
+<li>写出与所描述匹配的代码</li>
+</ol>
+<ul>
+<li>清楚的描述逻辑</li>
+<li>了解已有的函数库</li>
+<li>运用递归</li>
+</ul>
+<h2 id="少写代码"><a href="#少写代码" class="headerlink" title="少写代码"></a>少写代码</h2><blockquote>
+<p>  最好的代码就是没有代码</p>
+</blockquote>
+<p><strong>写代码的最高境界就是不写代码。</strong></p>
+<p>这句话虽有调侃之意，却隐含着哲学思辨，时刻问自己，我们真的需要写这些代码吗？</p>
+<p>不要低估写代码的时间，因为实现或许不费功夫，但是将来的代码库的维护，都会增加时间</p>
+<ul>
+<li>质疑和拆分你的需求<ul>
+<li>有时候，解决一半问题可能只需要花费四分之一的时间</li>
+<li>消除不必要的功能</li>
+</ul>
+</li>
+<li>保持小代码库<ul>
+<li>创建越来越多的“工具”代码来减少重复代码（第十章）</li>
+<li>减少无用代码或者没有用的功能</li>
+<li>让项目分开保持子项目状态</li>
+<li>总的来说，小心代码的重量。保持轻灵</li>
+</ul>
+</li>
+<li><p>类似植物剪枝，代码也应该勤快的修剪</p>
+<ul>
+<li>创造性的工作都不会保留之前所有的工作，比如电影、音乐、作者</li>
+</ul>
+</li>
+<li><p>熟悉周边的库</p>
+<ul>
+<li>其实现有的库可以解决大部分问题，不要重复造轮子，我们的时间更重要。</li>
+<li>使用 UNIX 命令行代替代码</li>
+</ul>
+</li>
+<li><p>避免过度设计</p>
+</li>
+<li><p>用最简单的方法完成工作</p>
+</li>
+</ul>
+<h1 id="精选话题"><a href="#精选话题" class="headerlink" title="精选话题"></a>精选话题</h1><h2 id="测试与可读性"><a href="#测试与可读性" class="headerlink" title="测试与可读性"></a>测试与可读性</h2><blockquote>
+<p>  测试应当具有可读性，以方便其他人可以舒服的更改或增加测试。</p>
+</blockquote>
+<ul>
+<li><p>普遍的测试原则</p>
+<ul>
+<li>应当对使用者隐去不重要的细节，以便其他更重要的细节突出</li>
+</ul>
+</li>
+<li><p>创建最小的测试声明</p>
+<ul>
+<li>大多数测试的基本内容都能精练成 “对于这样的输入或情形， 期望有 这样的行为或输出”。</li>
+</ul>
+</li>
+<li><p>让错误消息具备可读性</p>
+<ul>
+<li>更好版本的 <code>assert()</code></li>
+</ul>
+</li>
+<li><p>更好的测试输入</p>
+<ul>
+<li><strong>应当选择一组最简单的输入，前提是它能完整的使用被测代码</strong></li>
+<li>简化输入值<ul>
+<li><strong>又简单又能完成工作的测试值更好</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>一个功能，多个测试</p>
+<ul>
+<li>一个测试测试一个方向的bug，避免在一个测试函数内尝试所有情况</li>
+</ul>
+</li>
+<li><p>为测试函数命名</p>
+<ul>
+<li><p><code>Test_&lt;FunctionName&gt;</code></p>
+</li>
+<li><p><code>Test_&lt;FunctionName&gt;_&lt;situation&gt;</code></p>
+</li>
+<li>测试函数的名字就是注释</li>
+</ul>
+</li>
+<li><p>测试驱动的开发 Test-Drive Development</p>
+<ul>
+<li>解耦的最好的类往往是最容易测试的</li>
+<li>避免程序内部类和类之间方法的调用</li>
+<li>在写代码时想着测试就能有帮助，会促使我们停下来思考是否存在更好的设计</li>
+<li><p>坏代码</p>
+<p><img src="http://p9283q7hh.bkt.clouddn.com/bad_deisgn_for_test.png" alt="bad_deisgn_for_test"></p>
+</li>
+<li><p>好代码</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>特征</th>
+<th>对测试的好处</th>
+<th>对设计的好处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类只有很少的内部状态</td>
+<td>很容易写出测试</td>
+<td>更易理解</td>
+</tr>
+<tr>
+<td>类/函数只做一件事</td>
+<td>需要较少的测试用例</td>
+<td>较小/简单的组件更加模块化，系统能有较低耦合</td>
+</tr>
+<tr>
+<td>每个类对别的类依赖小，低耦合</td>
+<td>每个类可以独立测试</td>
+<td>系统可以并行开发，可以很容易的修改或者删除类，不会影响其他组件</td>
+</tr>
+<tr>
+<td>函数接口简单，定义明确</td>
+<td>有明确的行为可以测试，测试接口工作量小</td>
+<td>接口更容易让程序员学习，复用概率高</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p>避免走的太远（Don’t be too over）</p>
+<ul>
+<li>牺牲真实代码的可读性</li>
+<li>沉迷100%的测试覆盖率</li>
+<li>考虑投入产出比，有些bug不值得测试</li>
+<li>别让测试成为产品开发的阻碍</li>
+</ul>
+</li>
+</ul>
+<h2 id="第十五章、设计并改进“分钟-小时计数器”"><a href="#第十五章、设计并改进“分钟-小时计数器”" class="headerlink" title="第十五章、设计并改进“分钟/小时计数器”"></a>第十五章、设计并改进“分钟/小时计数器”</h2><p>可以去原文阅读这个实例</p>
+
+ 
+                <!-- Meta -->
+                <div class="post-meta">
+                    <hr>
+                    <br>
+                    <div class="post-tags">
+                        
+                            
+
+<a href="/tags/coding/">#coding</a>
+
+
+                        
+                    </div>
+                    <div class="post-date">
+                        2018 年 11 月 11 日
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Disqus Comments -->
+
+
+            </div>
+        </div>
+    </div>
+</article>
+</section>
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
+</script>
+
+    <!-- Google Analytics -->
+    
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+</body>
+
+</html>

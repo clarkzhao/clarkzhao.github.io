@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="一个人">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="clark">
+    
+
+    <!-- Title -->
+    
+    <title>强化学习系列（1） | 克拉克写字的地方</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+<!-- Back Home -->
+<a class="nav-back" href="/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+<!-- Page Header -->
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>强化学习系列（1）</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>这章主要介绍 MDP</p>
+<a id="more"></a>
+<h2 id="MDP-的假设是什么？"><a href="#MDP-的假设是什么？" class="headerlink" title="MDP 的假设是什么？"></a>MDP 的假设是什么？</h2><ul>
+<li><p>环境是完全可观测的 （<em>fully observable</em>）</p>
+</li>
+<li><p>状态满足<strong>马尔科夫性质</strong>：</p>
+<ul>
+<li>当前的状态充分描述了过去的信息，所以，如果已知当前状态，过去的状态就可以被忽略。</li>
+<li>数学表达式：</li>
+</ul>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+\mathbb{P}[S_{t+1} | S\_{t} ] = \mathbb{P}[S_{t+1} | S_1, \dots, S_t]</script><ul>
+<li>统计学上，状态是<strong>充分统计量</strong>（<a href="https://en.wikipedia.org/wiki/Sufficient_statistic" target="_blank" rel="noopener"><em>sufficient statistic</em></a>）</li>
+</ul>
+<h2 id="MDP包括了什么？"><a href="#MDP包括了什么？" class="headerlink" title="MDP包括了什么？"></a>MDP包括了什么？</h2><h3 id="状态转移矩阵-State-Transition-Matrix"><a href="#状态转移矩阵-State-Transition-Matrix" class="headerlink" title="状态转移矩阵 State Transition Matrix"></a>状态转移矩阵 State Transition Matrix</h3><p>从状态 $s$ 转移到 状态 $s^{\prime}$ 的概率为 </p>
+<script type="math/tex; mode=display">
+\mathcal{P}_{ss^{\prime}} =  \mathbb{P}[S_{t+1} = s^{\prime}| S_t = s]</script><p>$\sigma_a = b_b = c_c$</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching_files/DP.pdf" target="_blank" rel="noopener">1. Markov Decision Processes by David Silver, UCL</a></p>
+
+ 
+                <!-- Meta -->
+                <div class="post-meta">
+                    <hr>
+                    <br>
+                    <div class="post-tags">
+                        
+                            
+
+<a href="/tags/Reinforcement-Learning/">#Reinforcement Learning</a> <a href="/tags/Markov-Decision-Processes/">#Markov Decision Processes</a>
+
+
+                        
+                    </div>
+                    <div class="post-date">
+                        2018 年 04 月 12 日
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!-- Disqus Comments -->
+
+
+            </div>
+        </div>
+    </div>
+</article>
+</section>
+
+    <!-- Scripts -->
+    <!-- jQuery -->
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	console.log('Hexo-theme-hollow designed by zchen9 🙋 © 2015-' + (new Date()).getFullYear());
+</script>
+
+    <!-- Google Analytics -->
+    
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+</body>
+
+</html>
