@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/category/ai/</loc>
+    <lastmod>2020-04-24T00:13:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/categories/</loc>
+    <lastmod>2020-04-24T00:13:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://clarkzhao.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://clarkzhao.github.io/zh/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/tag/machine-learning/</loc>
+    <lastmod>2020-04-24T00:13:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/post/</loc>
+    <lastmod>2020-04-24T00:13:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://clarkzhao.github.io/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://clarkzhao.github.io/zh/post/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/tags/</loc>
+    <lastmod>2020-04-24T00:13:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://clarkzhao.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://clarkzhao.github.io/zh/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/post/the-quest-for-machine-learning/</loc>
+    <lastmod>2020-04-24T00:13:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/</loc>
+    <lastmod>2020-04-24T00:13:00+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://clarkzhao.github.io/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://clarkzhao.github.io/zh/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/talk/agifors/</loc>
+    <lastmod>2019-10-02T08:30:00-07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://clarkzhao.github.io/en/talk/agifors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://clarkzhao.github.io/zh/talk/agifors/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/authors/</loc>
+    <lastmod>2019-10-02T08:30:00-07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://clarkzhao.github.io/en/authors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://clarkzhao.github.io/zh/authors/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/author/q.-xiao/</loc>
+    <lastmod>2019-10-02T08:30:00-07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://clarkzhao.github.io/en/author/q.-xiao/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://clarkzhao.github.io/zh/author/q.-xiao/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/talk/</loc>
+    <lastmod>2019-10-02T08:30:00-07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://clarkzhao.github.io/en/talk/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://clarkzhao.github.io/zh/talk/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/author/s.-zhao/</loc>
+    <lastmod>2019-10-02T08:30:00-07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://clarkzhao.github.io/en/author/s.-zhao/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://clarkzhao.github.io/zh/author/s.-zhao/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/tag/seq2seq/</loc>
+    <lastmod>2019-10-02T08:30:00-07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://clarkzhao.github.io/en/tag/seq2seq/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://clarkzhao.github.io/zh/tag/seq2seq/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/category/cs/</loc>
+    <lastmod>2018-11-11T00:13:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/post/notes-the-art-of-readable-code/</loc>
+    <lastmod>2018-11-11T00:13:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/publication/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://clarkzhao.github.io/en/publication/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://clarkzhao.github.io/zh/publication/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://clarkzhao.github.io/zh/author/%E6%80%9D%E6%BA%90/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://clarkzhao.github.io/en/author/siyuan-zhao/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://clarkzhao.github.io/zh/author/%E6%80%9D%E6%BA%90/"
+                />
+  </url>
+  
+</urlset>
